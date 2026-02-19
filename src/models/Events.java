@@ -20,7 +20,13 @@ public class Events {
     }
     public String toFileString() {
         return nameEvent + ";" + addressEvent + ";" + categoryEvents + ";" + timeEvent + ";" + descriptionEvent;    }
-
+    public boolean isHappeningNow() {
+        LocalDateTime now = LocalDateTime.now();
+        return now.isAfter(timeEvent) && now.isBefore(timeEvent.plusHours(1));
+    }
+    public boolean hasPassed() {
+        return LocalDateTime.now().isAfter(timeEvent.plusHours(1));
+    }
     public String getNameEvent() {
         return nameEvent;
     }
