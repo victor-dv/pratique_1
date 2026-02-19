@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Users {
@@ -12,6 +13,7 @@ public class Users {
         this.email = email;
         this.nome = nome;
         this.cityResidence = cityResidence;
+        this.eventsConfirmed = new ArrayList<>();
     }
     public boolean confirmEvent(Events events){
         return this.eventsConfirmed.add(events);
