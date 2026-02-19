@@ -18,6 +18,8 @@ public class Events {
         this.timeEvent = timeEvent;
         this.descriptionEvent = descriptionEvent;
     }
+    public String toFileString() {
+        return nameEvent + ";" + addressEvent + ";" + categoryEvents + ";" + timeEvent + ";" + descriptionEvent;    }
 
     public String getNameEvent() {
         return nameEvent;
