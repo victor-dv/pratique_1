@@ -20,7 +20,7 @@ public class Events {
     }
 
     public String toFileString() {
-        return "Nome do eveto: " + nameEvent + ";" + " Endereço do eveto: " + addressEvent + ";" + " Categoria do eveto: " + categoryEvents + ";" + " Horário do eveto: " + timeEvent + ";" + " Descrição do eveto: " + descriptionEvent;
+        return nameEvent + ";" + addressEvent + ";" + categoryEvents + ";" + timeEvent + ";" + descriptionEvent;
     }
 
     public boolean isHappeningNow() {
