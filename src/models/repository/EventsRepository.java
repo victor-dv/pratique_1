@@ -12,14 +12,13 @@ public class EventsRepository {
     private final String FILE_NAME = "events.data";
 
     public void save(Events events) {
-        try {
-            FileWriter fileWriter = new FileWriter(FILE_NAME, true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            PrintWriter printWriter = new PrintWriter(bufferedWriter);
+        try (FileWriter fileWriter = new FileWriter(FILE_NAME, true);
+             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+             PrintWriter printWriter = new PrintWriter(bufferedWriter)) {
             printWriter.println(events.toFileString());
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Erro ao salvar no arquivo: " + e.getMessage(), e);
         }
     }
 

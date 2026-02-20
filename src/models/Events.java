@@ -18,52 +18,33 @@ public class Events {
         this.timeEvent = timeEvent;
         this.descriptionEvent = descriptionEvent;
     }
+
     public String toFileString() {
-        return nameEvent + ";" + addressEvent + ";" + categoryEvents + ";" + timeEvent + ";" + descriptionEvent;    }
+        return "Nome do eveto: " + nameEvent + ";" + " Endereço do eveto: " + addressEvent + ";" + " Categoria do eveto: " + categoryEvents + ";" + " Horário do eveto: " + timeEvent + ";" + " Descrição do eveto: " + descriptionEvent;
+    }
+
     public boolean isHappeningNow() {
         LocalDateTime now = LocalDateTime.now();
         return now.isAfter(timeEvent) && now.isBefore(timeEvent.plusHours(1));
     }
+
     public boolean hasPassed() {
         return LocalDateTime.now().isAfter(timeEvent.plusHours(1));
     }
+
     public String getNameEvent() {
         return nameEvent;
     }
 
-    public void setNameEvent(String nameEvent) {
-        this.nameEvent = nameEvent;
-    }
-
-    public String getAddressEvent() {
-        return addressEvent;
-    }
-
-    public void setAddressEvent(String addressEvent) {
-        this.addressEvent = addressEvent;
-    }
 
     public CategoryEvents getCategoryEvents() {
         return categoryEvents;
     }
 
-    public void setCategoryEvents(CategoryEvents categoryEvents) {
-        this.categoryEvents = categoryEvents;
-    }
 
     public LocalDateTime getTimeEvent() {
         return timeEvent;
     }
 
-    public void setTimeEvent(LocalDateTime timeEvent) {
-        this.timeEvent = timeEvent;
-    }
 
-    public String getDescriptionEvent() {
-        return descriptionEvent;
-    }
-
-    public void setDescriptionEvent(String descriptionEvent) {
-        this.descriptionEvent = descriptionEvent;
-    }
 }

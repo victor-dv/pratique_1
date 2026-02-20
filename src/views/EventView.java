@@ -44,7 +44,7 @@ public class EventView {
         System.out.print("Endereco: ");
         String addressEvent = scanner.nextLine();
 
-        System.out.println("Categorias: PARTY, SPORTS, CONCERT, THEATER, CONFERENCE, OTHER");
+        System.out.println("Categorias: SHOW, ESPORTE, FESTA, TEATRO, PALESTRA");
         System.out.print("Digite a categoria: ");
         CategoryEvents categoryEvents = CategoryEvents.valueOf(scanner.nextLine().toUpperCase());
 
